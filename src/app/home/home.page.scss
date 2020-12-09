@@ -1,0 +1,78 @@
+.toGame {
+  text-decoration: underline !important;
+}
+
+#container {
+  margin: 5%;
+  display: flex;
+  justify-content: space-between;
+
+  #leaderboardContainer {
+    width: 30%;
+
+    #leaderboardHeader {
+      display: flex;
+      background-color: #3880ff;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("https://i.imgur.com/gkxLRXM.jpg");
+      background-repeat: repeat;
+      background-size: 200px;
+      color: white;
+      text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+        2px 2px 0 #000;
+
+      #rankTitle {
+        margin-left: 1rem;
+      }
+
+      #nameTitle {
+        margin-left: 2rem;
+        width: 30%;
+      }
+
+      #scoreTitle {
+        margin-right: 1rem;
+        width: 70%;
+        text-align: right;
+      }
+    }
+
+    #leaderboard {
+      padding: 0;
+
+      .submission {
+        border: 1px solid #3880ff;
+
+        .rank,
+        .trophy,
+        .name,
+        .score {
+          margin-right: 1.5rem;
+        }
+
+        .rank {
+        }
+        .trophy {
+          width: 1rem;
+        }
+        .name {
+          word-wrap: break-word;
+          width: 30%;
+        }
+        .score {
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  #welcome {
+    width: 50%;
+    a {
+      color: #2dd36f;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Mouse Mash Marathon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <div id="container">
+    <div id="loginForm">
+      <ion-label class="formLabel">Sign In</ion-label>
+      <ion-item>
+        <ion-label position="fixed">Email:</ion-label>
+        <ion-input id="emailLogin"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Password:</ion-label>
+        <ion-input id="passwordLogin" type="password"></ion-input>
+      </ion-item>
+      <ion-button id="buttonLogin" (click)="signin()" disabled="true" color="danger">Sign in</ion-button>
+    </div>
+  
+    <div id="registerForm">
+      <ion-label class="formLabel">Create an account</ion-label>
+      <ion-item>
+        <ion-label position="fixed">Email:</ion-label>
+        <ion-input id="emailReg"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">First Name:</ion-label>
+        <ion-input id="nameReg"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="fixed">Password:</ion-label>
+        <ion-input id="passwordReg" type="password"></ion-input>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-label position="fixed">Confirm Password:</ion-label>
+        <ion-input id="confirmReg" type="password"></ion-input>
+      </ion-item> -->
+      <ion-button id="buttonReg" (click)="register()" disabled="true" color="danger">Register</ion-button>
+    </div>
+  </div>
+</ion-content>

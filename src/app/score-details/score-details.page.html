@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    
+    <div *ngIf="mashService.detail; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <ion-title>{{mashService.detail.name}}'s {{mashService.detail.clicks/10}} CPS Score</ion-title>
+    </ng-template>
+    <ng-template #elseBlock>
+      <ion-title>Mouse Mash Marathon - Score Detail</ion-title>
+    </ng-template>
+    
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" routerDirection="back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="success" routerLink="/mash" routerDirection="forward" class="toGame">Play The Game</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <div *ngIf="mashService.detail">
+
+    <p>{{mashService.detail.name}} achieved a score of {{mashService.detail.clicks/10}} cps ({{mashService.detail.clicks}} clicks total) on {{mashService.detail.time.toDate()}}</p>
+
+    <ion-button *ngIf="canDelete()" color="danger" (click)="delete()">Delete Score</ion-button>
+  </div>
+   
+</ion-content> 

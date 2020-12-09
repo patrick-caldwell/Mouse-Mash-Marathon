@@ -1,0 +1,20 @@
+#container {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 5% 25%;
+  @media (max-width: 1000px) {
+    margin: 0 5%;
+  }
+
+  .formLabel {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #registerForm,
+  #loginForm {
+    display: flex;
+    flex-direction: column;
+  }
+}

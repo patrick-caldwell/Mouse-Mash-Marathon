@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Mouse Mash Marathon - Leaderboards</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" routerLink="/mash" routerDirection="forward" class="toGame">Play The Game</ion-button>
+      <ion-button color="danger" class="toGame" (click)="signout()">Sign Out</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <div id="container">
+    <div id="leaderboardContainer">
+      <div id="leaderboardHeader" color="primary">
+        <h4 id="rankTitle">Rank</h4>
+        <h4 id="nameTitle">Name</h4>
+        <h4 id="scoreTitle">Speed</h4>
+      </div>
+      <ion-list id="leaderboard">
+        <ion-item
+          *ngFor="let record of mashService.records; let i = index"
+          color="dark" class="submission"
+          routerLink="/score-details/{{record.id}}"
+          routerDirection="forward"
+        >
+    
+          <ion-text color="warning" class="trophy">
+            <i *ngIf="isTopThree(i)" class="fas fa-trophy"></i>
+          </ion-text>
+    
+          <ion-text class="rank">
+            <p>#{{i + 1}}</p>
+          </ion-text>
+    
+          <ion-text class="name">
+            <p>{{record.data.name}}</p>
+          </ion-text>
+    
+          <ion-text class="score">
+            <p>{{record.data.clicks / 10}} cps</p>
+          </ion-text>
+
+          
+    
+          
+          
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div id="welcome">
+      <p>Welcome to the Mouse Mash Marathon, a competition to see who can click their mouse the fastest.</p>
+      <p>When the game begins, you will need to click as fast as you can for 10 seconds. Following the 10 seconds, you will be able to post your time to our leaderboards.</p>
+      <p><ion-router-link color="success" routerLink="/mash" routerDirection="forward" class="toGame">Play the game</ion-router-link></p>
+      <p>Application made by <a href="http://patrickdcaldwell.com/" target="_blank">Patrick Caldwell</a>.</p>
+    </div>
+    
+  </div>
+  
+</ion-content>

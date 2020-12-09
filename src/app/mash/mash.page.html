@@ -1,0 +1,26 @@
+<ion-header class="noSelect">
+  <ion-toolbar color="dark">
+    <ion-title>Mouse Mash Marathon - Game</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" routerDirection="back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" class="noSelect">
+  <div id="container">
+    <div id="instructions"></div>
+    <p>Press the start button below. After the 3 second countdown, click the left mouse button as fast as you can for {{this.time}} seconds.</p>
+    <ion-button (click)="startCountDown()" class="btn" id="btn" color="success">Start</ion-button>
+    <ion-progress-bar value="0" id="progress"></ion-progress-bar>
+    <div id="timer">&#8205;</div>
+
+    <ion-item-group id="form">
+      <ion-item>
+        <ion-label position="fixed">Score:</ion-label>
+        <p id="scoreInput">{{this.count}}</p>
+      </ion-item>
+      <ion-button (click)="submitScore()" class="btn" id="submit" color="danger" disabled="true">Play The Game</ion-button>
+    </ion-item-group>
+  </div>
+</ion-content>
